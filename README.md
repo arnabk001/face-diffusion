@@ -2,20 +2,20 @@
 
 In this project, I delve into the realm of diffusion models, which have gained considerable popularity in image generation. However, there is a limitation in unconditional diffusion models — they lack precise control over generated images. To overcome this, I implemented a conditional diffusion model, using various image attributes such as skin tone, hair color, age, and gender for nuanced image generation. The ultimate goal is to achieve precise control over generated images, particularly in terms of object poses and attributes. I begin by constructing an unconditional diffusion model for high-quality random face image generation and then modify it to incorporate face attribute vectors for generating controlled images. Experiments are conducted on MNIST and CelebA datasets, with results reported to showcase the efficacy of the approach. Unlike previous models that rely on complex architectures and supplementary attributes, my approach streamlines the process for one-step image generation based solely on the attributes of a given facial image.
 
-The key contribution of this work are the following:
+The key contributions of this work are the following:
 * We develop a diffusion model from scratch, conditioned on image attributes
-* We evaluate our model on MNIST and CelebA data set, demonstrating smooth interpolation through
+* We evaluate our model on MNIST and CelebA datasets, demonstrating smooth interpolation through
 editing image attributes
-* We compare the performance of the unconditional model with respect to conditional model, attaining a
+* We compare the performance of the unconditional model to conditional model, attaining a
 4% increase in FID
 
 ## Model Architecture
 
 We implement the Denoising Diffusion Probabilistic Models (DDPM) [HJA20] paper and implement the classifier free guidance [HS22] technique to include the attribute information throughout the image generation process.
 
-The base architecture is of a U-Net that utilises ResNet blocks and self attention modules. Figure 1 depicts the basic framework of the model architecture. The details of the DDPM model is further explained in Figure 2
+The base architecture is of a U-Net that utilizes ResNet blocks and self-attention modules. Figure 1 depicts the basic framework of the model architecture. The details of the DDPM model is further explained in Figure 2
 
-![basic_arch](images/Picture2.png "The overall architecture of our model. The DDPM model takes the noisy image as an input and iteratively denoises by predicting the noise contained in the image. During testing, pure noise is fed to the DDPM model along with the transformed face attributes and it generates face images.")
+!["The overall architecture of our model. The DDPM model takes the noisy image as an input and iteratively denoises by predicting the noise contained in the image. During testing, pure noise is fed to the DDPM model along with the transformed face attributes and it generates face images."](images/Picture2.png)
 
 ![detailed_arch](images/Picture1.png "Our model architecture uses a U-Net model with ResNet Blocks and self attention layers. The timestep and learned attribute embedding is fed to the network at every iteration")
 
