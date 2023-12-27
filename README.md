@@ -9,6 +9,8 @@ editing image attributes
 * We compare the performance of the unconditional model to conditional model, attaining a
 4% increase in FID
 
+_Refer to the final report and project presentation for more details_
+
 ## Model Architecture
 
 We implement the Denoising Diffusion Probabilistic Models (DDPM) [HJA20] paper and implement the classifier free guidance [HS22] technique to include the attribute information throughout the image generation process.
