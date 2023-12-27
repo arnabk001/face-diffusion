@@ -18,13 +18,13 @@ We implement the Denoising Diffusion Probabilistic Models (DDPM) [HJA20] paper a
 The base architecture is of a U-Net that utilizes ResNet blocks and self-attention modules. Figure 1 depicts the basic framework of the model architecture. The details of the DDPM model is further explained in Figure 2
 
 <figure style="background-color: #ffffff; display: inline-block;">
-  <img src="images/Picture2.png" alt="Image 1" style="width: 800px; opacity: 1;">
+  <img src="images/Picture2.jpg" alt="Image 1" style="width: 800px; opacity: 1;">
 <figcaption>The overall architecture of our model. The DDPM model takes the noisy image as an input and iteratively denoises by predicting the noise contained in the image. During testing, pure noise is fed to the DDPM model along with the transformed face attributes and it generates face images</figcaption>
 </figure>
-
+###
 
 <figure>
-  <img src="images/Picture1.png" alt="Image 1" style="width:800px;">
+  <img src="images/Picture1.jpg" alt="Image 1" style="width:800px;">
 <figcaption>Our model architecture uses a U-Net model with ResNet Blocks and self-attention layers. The timestep and learned attribute embedding is fed to the network at every iteration</figcaption>
 </figure>
 
@@ -41,7 +41,7 @@ The base architecture is of a U-Net that utilizes ResNet blocks and self-attenti
 
 ### Attribute Conditioned Image Generation
 
-![result2](images/Picture3.png "Face attribute interpolation results in CelebA")
+![result2](images/Picture3.jpg "Face attribute interpolation results in CelebA")
 
 
 The conditional image generation results show us that the model is successfully able to associate different face attributes in its image generation process. For example, in this particular interpolation, we can see that adding facial attributes (such as eyeglasses, beard and inverting male-female etc.) results in successful guided image generation.
